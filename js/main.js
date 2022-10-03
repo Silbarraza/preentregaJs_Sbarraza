@@ -1,15 +1,6 @@
-/* Gestor de turnos (gimnasio)
-Objetivo del usuario:
-Registrarse (usuario/dni/contraseña) 
-Poder reservar un turno en una clase del día con minimo de 30 minutos de anticipación, cada clase tiene un cupo de 14 personas.
-Una vez obtenido el turno, el usuario podrá cancelarlo/modificarlo con hasta 30 minutos de anticipación (ingresando su contraseña previamente cargada para poder cancelar el turno)
-el usuario puede listar su historial de clases
+/* Gestor de turnos (gimnasio)*/
 
-objetivo del administrador:
-listar los turnos activos por clases 
-listar el historial de turnos por cliente*/
 
-//Seleccionar clase
 
 const clave = 333;
 let claveIngresada = parseInt(prompt ("Ingresa tu clave"));
@@ -18,6 +9,7 @@ let cantidadDeIntentos = 0;
 let claseIngresada ="";
 let numTurno = 0;
 
+//ingresar clave
 while ((claveIngresada !== clave) && (cantidadDeIntentos < 3)) {
     alert ("La clave es incorrecta");
          
@@ -29,7 +21,7 @@ while ((claveIngresada !== clave) && (cantidadDeIntentos < 3)) {
 if (cantidadDeIntentos === 3) {
     alert ("Supero la cantidad de intentos");
 }else {
-       
+    //seleccion de la clase del gym   
     claseIngresada = listaClases(prompt("Elegí la clase a la que asistirás"));
     
     while (claseIngresada == 0) {
@@ -38,6 +30,7 @@ if (cantidadDeIntentos === 3) {
         claseIngresada = listaClases(prompt("Por favor, ingresa la clase a la que asistirás"));
     }
 
+    //asignación de turno
     cuentaTurnos ();
 
 }
