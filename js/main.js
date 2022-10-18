@@ -57,14 +57,13 @@ class ClaseDelGym {
     }
 
     reservaClase (cliente) {
-        if(this.estado){
-            console.log("Esta clase ya esta reservada");
-        }else {
+        if(!this.estado){
             this.estado=true;
             this.cliente=cliente;
-            console.log("La tu lugar fue reservado con éxito");
+            console.log("Reserva exitosa");
+        }else {
+            this.estado=false;
         }
-
     }
 
     cancelaClase () {
@@ -142,7 +141,14 @@ if (cantidadDeIntentos === 3) {
     //si se ingresa correctamente se asigna de turno y la clase queda reservada
     asignacionTurno ();
 
-    //la clase pasa a estado reservado
-    claseIngresada.reservaClase(clienteRegistrado);
-
+     //la clase pasa a estado reservado
+    for(let i = 0; i < listaClasesGym.length; i++) {
+        
+        if(listaClasesGym[i].nombreClase === claseIngresada) {
+            listaClasesGym[i].reservaClase(clienteRegistrado);
+            break;
+        }
+    }   
 }
+
+
