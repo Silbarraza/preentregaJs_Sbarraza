@@ -4,36 +4,214 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Fitness | Gym</title>
 
     <!-- Mis estilos css -->
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Health & Fitness | Gym</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    
 </head>
 
-<body>
+<body class="container-fluid">
 
     <header id="header">
-        <p>Logo</p>
+        <p>H&F|Gym</p>
         
     </header>
     
-    <main>
+    <main class="container">
         <section>
             <h1>Health & Fitness Gym</h1>
-            <p>Alcanza tus metas con H&F</p>
+            <p>Te ayudamos a alcanzar tus metas</p>
+        </section>
+
+        
+        <section class="bg-light m-2 p-4">
+            <h2 class="text-center p-4">Clases y horarios</h2>
+
+            <table class="table mb-4 p-2">
+                <thead class="table-info">
+                    <tr>
+                        <th scope="col">Horarios</th>
+                        <th scope="col">Lunes</th>
+                        <th scope="col">Martes</th>
+                        <th scope="col">Miécoles</th>
+                        <th scope="col">Jueves</th>
+                        <th scope="col">Viernes</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">9:00</th>
+                        <td>Full Body</td>
+                        <td>Funcional</td>
+                        <td>Full Body</td>
+                        <td>Zumba</td>
+                        <td>Full Body</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10:00</th>
+                        <td>TRX</td>
+                        <td>Streching</td>
+                        <td>Funcional</td>
+                        <td>Streching</td>
+                        <td>TRX</td>
+                    </tr>
+    
+                    <tr>
+                        <th scope="row">11:00</th>
+                        <td>Full Body</td>
+                        <td>Zumba</td>
+                        <td>Full Body</td>
+                        <td>Zumba</td>
+                        <td>Full Body</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12:00</th>
+                        <td>Full Body</td>
+                        <td>Areobox</td>
+                        <td>Funcional</td>
+                        <td>Areobox</td>
+                        <td>Full Body</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="table-secondary"></th>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">16:00</th>
+                        <td>Areobox</td>
+                        <td>GAP</td>
+                        <td>Funcional</td>
+                        <td>Areobox</td>
+                        <td>GAP</td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row" class="table-secondary"></th>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                        <td class="table-secondary"></td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">19:00</th>
+                        <td>Areobox</td>
+                        <td>GAP</td>
+                        <td>Funcional</td>
+                        <td>Areobox</td>
+                        <td>GAP</td>
+                    </tr>
+    
+                    <tr>
+                        <th scope="row">20:00</th>
+                        <td>Zumba</td>
+                        <td>TRX</td>
+                        <td>Funcional</td>
+                        <td>TRX</td>
+                        <td>Zumba</td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">21:00</th>
+                        <td>Funcional</td>
+                        <td>Areobox</td>
+                        <td>Funcional</td>
+                        <td>Areobox</td>
+                        <td>Funcional</td>
+                    </tr>           
+                </tbody>
+            </table>
+
         </section>
 
         <section>
-            <h2>Clases y horarios</h2>
-            <p>Elegi la clase y reserva tu lugar</p>
+            <h2 class="text-center p-4">Reservas de turnos</h2>
+
+            <form action="" id="reserva">
+                <!-- <input type="date" id="fecha" autocomplete="off"/> -->
+                <input type="text" id="nombre" placeholder="Nombre" autocomplete="off"/>
+                <input type="text" id="apellido" placeholder="Apellido" autocomplete="off"/>
+
+                <select name="Clases" id="selectClase">
+                    <option value="0">Seleccionar Clase</option>
+                    <option value="1">Funcional</option>
+                    <option value="2">Full Body</option>
+                    <option value="3">TRX</option>
+                    <option value="4">GAP</option>
+                    <option value="5">Streching</option>
+                    <option value="6">Areobox</option>
+                </select>
+        
+                <button type="submit">Reservar</button>
+            </form>
+    
+            <table id="claseReservadas" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Clase</th>
+                    </tr>
+                </thead>
             
-            <p>Reserva tu clase aquí</p>
-            <nav>
-                <button>Turnos</button>
-            </nav>
+                <tbody id="tbodyClasesReservadas">
+            
+                </tbody>
+            </table> 
+         
+
+
+
+            <!-- <p>Seguí los pasos y reserva tu lugar</p>
+
+            <label>Selecciona la fecha</label>
+            <form class="mb-4" id="elegirFecha">
+                
+            </form>
+
+            <label>Elegí la clase</label>
+            <form class="mb-4" id="formReserva">  
+                              
+                <select name="Clases" id="selectClase">
+                    <option value="">Seleccionar Clase</option>
+
+                </select>
+
+                <button type="submit">Reservar</button>
+                                        
+            </form>
+            
+
+            <table id="claseReservada" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Clase</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+            
+                <tbody id="tbodyClasesReservadas">
+            
+                </tbody>
+            </table> -->
 
         </section>
+
+          
 
     </main>
     
