@@ -362,7 +362,9 @@ let reservas = obtenerReservas();
 
 const tbodyClasesReservadas = document.getElementById("tbodyClasesReservadas"); 
 
+let selectClase = document.getElementById("selectClase");
 
+let valor;
 
 
 //console.log(selectClase);
@@ -382,14 +384,12 @@ formularioReservas.addEventListener("submit", (event)=>{
     const fecha = inputFecha.value;
     const nombre = inputNombre.value;
     const apellido = inputApellido.value;
-
-    let selectClase = document.getElementById("selectClase");
     
-    const clase = selectClase.addEventListener("change", (event)=>{
-        const target = event.target;
-        valor = target.value;
+    selectClase.addEventListener("change", (event)=>{
+        valor = event.target.value;
         return valor;
-    });  
+    }); 
+    
    
     //Chequeamos que la fecha no este reservada y que la fehca sea distinta de hoy
     if(fechaDisponible(fecha)) {
@@ -401,7 +401,7 @@ formularioReservas.addEventListener("submit", (event)=>{
             fecha: fecha,
             nombre: nombre,
             apellido: apellido,
-            clase: clase,
+            clase: selectClase.value,
         });
 
         //Cargar el array al localstorage
